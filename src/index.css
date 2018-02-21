@@ -1,5 +1,81 @@
 body {
-  margin: 0;
+  background-color: #e3e2dd;
+  font-family: Verdana, Arial, sans-serif;
   padding: 0;
-  font-family: sans-serif;
+  margin-left: 14px;
+  margin-right: 14px;
 }
+
+button {
+  background: #f3ce00
+    url("https://images-na.ssl-images-amazon.com/images/G/01/imdb/images/wheel/button-bg-3572275084._V_.gif")
+    0 0 repeat-x;
+  border-bottom: 1px solid #cc9933;
+  border-left: 1px solid #d5ab55;
+  border-right: 1px solid #cc9933;
+  border-top: 1px solid #d5ab55;
+  color: #000000 !important;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  overflow: visible;
+  padding: 6px 10px;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+h1 {
+  color: #333333;
+  display: block;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 110%;
+  margin: 14px 0;
+}
+
+h3 {
+  color: #a58500;
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0 0 0.5em;
+  padding: 0;
+}
+
+#root {
+  font-family: Verdana, Arial, sans-serif;
+  color: #333333;
+  font-size: 13px;
+  width: 1008px;
+  /* margin: auto; */
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+}
+
+#wrapper {
+  position: static;
+  width: auto;
+  margin: 100px;
+  min-width: 1008px;
+}
+
+/* {
+
+import fonts
+add margin to page
+add background color
+style navbar
+style errors div
+
+
+
+
+} */

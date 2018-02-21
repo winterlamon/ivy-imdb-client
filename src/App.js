@@ -4,7 +4,7 @@ import BirthdayForm from "./components/BirthdayForm";
 
 class App extends Component {
   findPeopleByBirthday(birthday) {
-    return fetch(`http://localhost:3000/ivy-imdb/people/${birthday}`, {
+    return fetch(`http://localhost:3001/ivy-imdb/people/${birthday}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -18,7 +18,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div>
+        <h1>IVY IMDb Birthday Search</h1>
         <BirthdayForm findPeopleByBirthday={this.findPeopleByBirthday} />
       </div>
     );
