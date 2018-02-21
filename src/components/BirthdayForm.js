@@ -36,6 +36,15 @@ class BirthdayForm extends React.Component {
     }
   };
 
+  handleReset = event => {
+    event.preventDefault();
+    this.setState({
+      errorMessages: [],
+      month: "",
+      day: ""
+    });
+  };
+
   render() {
     console.log("STATE IN BIRTHDAY FORM", this.state);
 
@@ -89,7 +98,6 @@ class BirthdayForm extends React.Component {
                 value={this.state.day}
                 onChange={this.handleChange}
               >
-                {/* <option selected>Day</option> */}
                 <option value="01">01</option>
                 <option value="02">02</option>
                 <option value="03">03</option>
@@ -123,8 +131,12 @@ class BirthdayForm extends React.Component {
                 <option value="31">31</option>
               </select>
             </label>
-
-            <button onClick={this.handleSubmit}>Search</button>
+            <div>
+              <button onClick={this.handleSubmit}>Search</button>
+            </div>
+            <div>
+              <button onClick={this.handleReset}>Reset</button>
+            </div>
           </form>
         </div>
       </div>
