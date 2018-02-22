@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import {} from "semantic-ui-react";
-import BirthdayForm from "./components/BirthdayForm";
+import NavBar from "./components/NavBar";
+import MainContainer from "./components/MainContainer";
 
 class App extends Component {
+  state = {
+    people: []
+  };
+
   findPeopleByBirthday(birthday) {
     return fetch(`http://localhost:3001/ivy-imdb/people/${birthday}`, {
       method: "POST",
@@ -13,14 +18,25 @@ class App extends Component {
       body: JSON.stringify({ birthday })
     })
       .then(res => res.json())
-      .then(people => console.log(people));
+      .then(peopleResults => this.setState({ people: peopleResults }));
+  }
+
+  resetPeople() {
+    this.setState({ people: [] });
   }
 
   render() {
     return (
       <div>
-        <h1>IVY IMDb Birthday Search</h1>
-        <BirthdayForm findPeopleByBirthday={this.findPeopleByBirthday} />
+        <NavBar />
+        <div id="app">
+          <h1>IVY IMDb Birthday Search</h1>
+          <MainContainer
+            findPeopleByBirthday={this.findPeopleByBirthday}
+            resetPeople={this.resetPeople}
+            people={this.state.people}
+          />
+        </div>
       </div>
     );
   }

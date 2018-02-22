@@ -13,6 +13,9 @@ class BirthdayForm extends React.Component {
   };
 
   validate = () => {
+    let month = this.state.month;
+    let day = this.state.day;
+    // checks to see if a month and day were set
     if (this.state.month === "") {
       this.setState({
         errorMessages: this.state.errorMessages.push("Please select a month.")
@@ -23,6 +26,24 @@ class BirthdayForm extends React.Component {
         errorMessages: this.state.errorMessages.push("Please select a day.")
       });
     }
+    // checks whether month has valid number of days
+    if (
+      (month === "04" || month === "06" || month === "09" || month === "11") &&
+      parseInt(day) > 30
+    ) {
+      this.setState({
+        errorMessages: this.state.errorMessages.push(
+          `Eek! That month only has 30 days. Try again.`
+        )
+      });
+    }
+    if (month === "02" && parseInt(day) > 29) {
+      this.setState({
+        errorMessages: this.state.errorMessages.push(
+          `Oops! February never has more than 29 days. Try again.`
+        )
+      });
+    }
     return this.state.errorMessages;
   };
 
@@ -30,7 +51,7 @@ class BirthdayForm extends React.Component {
     event.preventDefault();
     this.validate();
     if (this.state.errorMessages.length > 0) {
-      alert("Whoops!", this.state.errorMessages.join("\r\n"));
+      alert(this.state.errorMessages.join("\r\n"));
     } else {
       this.props.findPeopleByBirthday(this.state.month + "-" + this.state.day);
     }
@@ -48,18 +69,17 @@ class BirthdayForm extends React.Component {
   render() {
     console.log("STATE IN BIRTHDAY FORM", this.state);
 
-    const allErrorMessages = this.state.errorMessages.map(message => (
-      <li>{message}</li>
-    ));
+    const allErrorMessages =
+      this.state.errorMessages.length > 0
+        ? this.state.errorMessages.map(message => <li>{message}</li>)
+        : null;
 
     return (
       <div>
-        {this.state.errorMessages.length > 0 ? (
-          <div className="errors">
-            <ul>{allErrorMessages}</ul>
-          </div>
-        ) : null}
-        <div>
+        <div className="errors">
+          <ul>{allErrorMessages}</ul>
+        </div>
+        <div className="form">
           <form>
             <label>
               <h3>Month</h3>
@@ -72,6 +92,7 @@ class BirthdayForm extends React.Component {
                 value={this.state.month}
                 onChange={this.handleChange}
               >
+                <option defaultValue>Select a month</option>
                 <option value="01">January</option>
                 <option value="02">February</option>
                 <option value="03">March</option>
@@ -98,6 +119,7 @@ class BirthdayForm extends React.Component {
                 value={this.state.day}
                 onChange={this.handleChange}
               >
+                <option defaultValue>Select a day</option>
                 <option value="01">01</option>
                 <option value="02">02</option>
                 <option value="03">03</option>
