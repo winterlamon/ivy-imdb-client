@@ -11,9 +11,9 @@ const PeopleContainer = props => {
       : null;
 
   return (
-    <div>
+    <div className="people-container">
       {props.loading === true ? (
-        <div>
+        <div className="loader-container">
           <div className="loader" />
         </div>
       ) : (
