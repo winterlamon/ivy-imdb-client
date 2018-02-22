@@ -7,11 +7,19 @@ const PeopleItem = props => {
     <div>
       <Card className="card">
         <Card.Content>
-          <Image floated="left" size="large" src={person.photoUrl} />
-          <Card.Header>
+          <Image
+            floated="left"
+            size="large"
+            src={person.photoUrl}
+            className="card-image"
+          />
+          {/* <Card.Header >
             <a href={person.profileURL}>{props.name}</a>
-          </Card.Header>
-          <Card.Description>
+          </Card.Header> */}
+          <Card.Description className="card-content">
+            <h3>
+              <a href={person.profileURL}>{props.name}</a>
+            </h3>
             <p>
               <strong>Most Known Work</strong>
             </p>

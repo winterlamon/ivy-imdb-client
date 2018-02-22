@@ -33,9 +33,9 @@ class App extends Component {
     console.log("people in App", this.state.people);
 
     return (
-      <div>
+      <div id="app">
         <NavBar />
-        <div id="app">
+        <div className="background">
           <h1>IVY IMDb Birthday Search</h1>
           <MainContainer
             findPeopleByBirthday={this.findPeopleByBirthday}
