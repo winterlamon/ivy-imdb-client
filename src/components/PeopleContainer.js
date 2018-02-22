@@ -1,5 +1,4 @@
 import React from "react";
-import { Dimmer, Loader } from "semantic-ui-react";
 
 import PeopleItem from "./PeopleItem";
 
@@ -15,9 +14,7 @@ const PeopleContainer = props => {
     <div>
       {props.loading === true ? (
         <div>
-          <Dimmer active inline="centered" size="large">
-            <Loader>Loading</Loader>
-          </Dimmer>
+          <div className="loader" />
         </div>
       ) : (
         <div>{allPeople}</div>
