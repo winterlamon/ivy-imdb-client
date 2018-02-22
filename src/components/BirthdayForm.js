@@ -58,6 +58,7 @@ class BirthdayForm extends React.Component {
 
   handleReset = event => {
     event.preventDefault();
+    this.props.resetPeople();
     this.setState({
       errorMessages: [],
       month: "",

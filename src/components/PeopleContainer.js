@@ -11,13 +11,15 @@ const PeopleContainer = props => {
       : null;
 
   return (
-    <div className="people-container">
+    <div>
       {props.loading === true ? (
-        <div className="loader-container">
-          <div className="loader" />
+        <div className="people-container">
+          <div className="loader-container" style={{ textAlign: "center;" }}>
+            <div className="loader" />
+          </div>
         </div>
       ) : (
-        <div>{allPeople}</div>
+        <div className="people-container">{allPeople}</div>
       )}
     </div>
   );

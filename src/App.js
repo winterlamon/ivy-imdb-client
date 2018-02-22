@@ -25,9 +25,9 @@ class App extends Component {
       );
   };
 
-  resetPeople() {
+  resetPeople = () => {
     this.setState({ people: [] });
-  }
+  };
 
   render() {
     console.log("people in App", this.state.people);

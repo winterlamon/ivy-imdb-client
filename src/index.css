@@ -1,9 +1,11 @@
+html,
 body {
   background-color: #e3e2dd;
   font-family: Verdana, Arial, sans-serif;
   padding: 0;
   margin-left: 14px;
   margin-right: 14px;
+  height: 100%;
 }
 
 a {
@@ -61,23 +63,27 @@ h3 {
   padding-top: 0px;
   padding-bottom: 0px;
   margin-top: -20px;
-  /* margin-bottom: -2000px; */
+  /* margin-bottom: -200px; */
   height: 100%;
 }
 
 #main {
   width: 646px;
   float: left;
-  /* background-color: #ffffff; */
 }
 
 #root {
+  display: flex;
   background-color: #ffffff;
+  background-repeat: repeat-y;
+  background-size: cover;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
   color: #333333;
   font-family: Verdana, Arial, sans-serif;
   font-size: 13px;
-  height: inherit;
+  min-height: 100vh;
+  /* max-height: 1680vh; */
+  height: 100%;
   margin: auto;
   width: 1008px;
 }
@@ -166,7 +172,9 @@ h3 {
 
 .loader-container {
   padding: 2rem;
-  display: inline-flex;
+  display: flex;
+  padding: auto;
+  margin: auto;
 }
 
 .loader {
