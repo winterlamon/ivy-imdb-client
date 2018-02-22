@@ -14,9 +14,6 @@ const PeopleItem = props => {
             className="card-image"
           />
           <div className="card-content">
-            {/* <Card.Header>
-              <a href={person.profileURL}>{props.name}</a>
-            </Card.Header> */}
             <Card.Description>
               <h3>
                 <a href={person.profileUrl} target="_blank">
