@@ -57,14 +57,15 @@ h3 {
   margin-left: 20px;
 }
 
-#navbar {
+.header {
   background: #333333;
   background: -webkit-linear-gradient(top, #646464 0%, #0e0e0e 100%);
   background: linear-gradient(to bottom, #646464 0%, #0e0e0e 100%);
   border-top: 1px solid #444444;
   color: #ffffff;
+  display: flex;
   font: 10pt Verdana, Arial, sans-serif;
-  height: 83px;
+  height: 80px;
   margin: 15px auto auto -0px;
   padding: 21px;
   position: relative;

@@ -1,5 +1,4 @@
 import React from "react";
-import {} from "semantic-ui-react";
 
 class BirthdayForm extends React.Component {
   state = {
@@ -29,7 +28,7 @@ class BirthdayForm extends React.Component {
     // checks whether month has valid number of days
     if (
       (month === "04" || month === "06" || month === "09" || month === "11") &&
-      parseInt(day) > 30
+      parseInt(day, 10) > 30
     ) {
       this.setState({
         errorMessages: this.state.errorMessages.push(
@@ -37,7 +36,7 @@ class BirthdayForm extends React.Component {
         )
       });
     }
-    if (month === "02" && parseInt(day) > 28) {
+    if (month === "02" && parseInt(day, 10) > 28) {
       this.setState({
         errorMessages: this.state.errorMessages.push(
           `Oops! February can only have up to 28 days. Try again.`

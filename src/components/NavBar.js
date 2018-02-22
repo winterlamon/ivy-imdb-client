@@ -1,12 +1,15 @@
 import React from "react";
-import { logo } from "../IMDb_logo_logotype.png";
+import { Header, Image } from "semantic-ui-react";
 
 const NavBar = () => {
   return (
-    <div id="navbar">
-      <img src="../IMDb_logo_logotype.png" alt="IMDb logo" />
-      <h1>IVY Code Challenge</h1>
-    </div>
+    <Header as="h3" block className="header" textAlign="left">
+      <Image
+        width="150"
+        alt="IMDb Logo 2016"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/512px-IMDB_Logo_2016.svg.png"
+      />
+    </Header>
   );
 };
 
