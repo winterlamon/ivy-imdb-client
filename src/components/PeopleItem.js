@@ -13,29 +13,33 @@ const PeopleItem = props => {
             src={person.photoUrl}
             className="card-image"
           />
-          {/* <Card.Header >
-            <a href={person.profileURL}>{props.name}</a>
-          </Card.Header> */}
-          <Card.Description className="card-content">
-            <h3>
+          <div className="card-content">
+            {/* <Card.Header>
               <a href={person.profileURL}>{props.name}</a>
-            </h3>
-            <p>
-              <strong>Most Known Work</strong>
-            </p>
-            <p>
-              <strong>Title: </strong>
-              {person.mostKnownWork.title}
-            </p>
-            <p>
-              <strong>Rating: </strong>
-              {person.mostKnownWork.rating}
-            </p>
-            <p>
-              <strong>Director: </strong>
-              {person.mostKnownWork.director}
-            </p>
-          </Card.Description>
+            </Card.Header> */}
+            <Card.Description>
+              <h3>
+                <a href={person.profileUrl} target="_blank">
+                  {person.name}
+                </a>
+              </h3>
+              <p>
+                <strong>Most Known Work</strong>
+              </p>
+              <p>
+                <strong>Title: </strong>
+                {person.mostKnownWork.title}
+              </p>
+              <p>
+                <strong>Rating: </strong>
+                {person.mostKnownWork.rating}
+              </p>
+              <p>
+                <strong>Director: </strong>
+                {person.mostKnownWork.director}
+              </p>
+            </Card.Description>
+          </div>
         </Card.Content>
       </Card>
     </div>

@@ -6,6 +6,10 @@ body {
   margin-right: 14px;
 }
 
+a {
+  color: #a58500;
+}
+
 button {
   background: #f3ce00
     url("https://images-na.ssl-images-amazon.com/images/G/01/imdb/images/wheel/button-bg-3572275084._V_.gif")
