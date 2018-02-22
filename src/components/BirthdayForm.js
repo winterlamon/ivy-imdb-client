@@ -37,10 +37,10 @@ class BirthdayForm extends React.Component {
         )
       });
     }
-    if (month === "02" && parseInt(day) > 29) {
+    if (month === "02" && parseInt(day) > 28) {
       this.setState({
         errorMessages: this.state.errorMessages.push(
-          `Oops! February never has more than 29 days. Try again.`
+          `Oops! February can only have up to 28 days. Try again.`
         )
       });
     }

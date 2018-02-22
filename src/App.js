@@ -41,6 +41,7 @@ class App extends Component {
             findPeopleByBirthday={this.findPeopleByBirthday}
             resetPeople={this.resetPeople}
             people={this.state.people}
+            loading={this.state.loading}
           />
         </div>
       </div>

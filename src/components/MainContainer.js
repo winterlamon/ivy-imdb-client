@@ -20,7 +20,7 @@ const MainContainer = props => {
         findPeopleByBirthday={props.findPeopleByBirthday}
         resetPeople={props.resetPeople}
       />
-      <PeopleContainer people={props.people} />
+      <PeopleContainer people={props.people} loading={props.loading} />
     </div>
   );
 };
